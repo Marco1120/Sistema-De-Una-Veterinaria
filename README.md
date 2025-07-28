@@ -1,5 +1,8 @@
 <h1 align="center"> SISTEMA PARA VETERINARIA - "El Pibe" </h1>
 
+## <h1 align="center"> <img width="500" height="500" alt="Diseño sin título (15)" src="https://github.com/user-attachments/assets/78abcecc-84eb-4d38-84d2-1411745415f1" /></h1>
+
+
 ## EQUIPO 7
 
 ### Integrantes:
@@ -18,3 +21,4 @@ Aplicación de escritorio en Java, desarrollada con Swing y conectada a MySQL
 
 ## 
 ## FUNCIONALIDADES CLAVE
+
