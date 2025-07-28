@@ -495,6 +495,8 @@ public void eliminarTratamientos() {
 - Correo.jar
 - j.Calendar
 - Ticket.jar
+- Captcha.jar
+- BarradeProgreso.jar
 
 ### Pasos para instalar/ejecutar:
 
