@@ -15,3 +15,6 @@ Aplicación de escritorio en Java, desarrollada con Swing y conectada a MySQL
 ### Componente utilizado:
 - Captcha: https://github.com/FanyBr07/ComponenteVisual
 - Barra de progreso: https://github.com/Marco1120/Componente-Visual
+
+## 
+## FUNCIONALIDADES CLAVE
