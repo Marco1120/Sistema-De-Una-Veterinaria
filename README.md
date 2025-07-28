@@ -508,5 +508,5 @@ public void eliminarTratamientos() {
 
 ## 👥 Autores
 
-| [<img src="https://avatars.githubusercontent.com/u/116097210?v=4" width=115><br><sub>Marco1120</sub>](https://github.com/Marco1120) | [<img src="https://avatars.githubusercontent.com/u/165308511?v=4" width=115><br><sub>Adrian-Valentin27</sub>](https://github.com/Adrian-Valentin27) |
-| :---: | :---: |
+[![Marco1120](https://github.com/Marco1120.png?size=100)](https://github.com/Marco1120)
+[![Adrian-Valentin27](https://github.com/Adrian-Valentin27.png?size=100)](https://github.com/Adrian-Valentin27)
