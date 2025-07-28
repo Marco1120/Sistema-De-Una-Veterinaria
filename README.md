@@ -345,4 +345,140 @@ public void eliminarUsuarios() {
     }
 ```
 
-### CRUD 
+### CRUD de tratamientos:
+Create (Crear). El botón registrar abre un JDialog llamada registro de tratamientos ya que en esta crean los regsitros de los tratamientos realizados. En este se ingresaran la descripcion del tratamiento, el costo e id de la cita.
+
+<img width="1328" height="756" alt="Captura de pantalla 2025-07-28 045533" src="https://github.com/user-attachments/assets/9f2da09e-07ef-4697-afc3-aa3a8e7f3036" />
+Imagen 5.
+
+Read (Leer). Muestrar todos los tratamientos, busca por ID, descripción, costo, o ID de cita y carga datos en la tabla desde la base de datos.
+```java
+public void mostrarTratamientos(int opcionBuscar, String Valor) {
+        DefaultTableModel tTratamiento = new DefaultTableModel();
+        tTratamiento.addColumn("Identificación");
+        tTratamiento.addColumn("Descripción");
+        tTratamiento.addColumn("Costo");
+        tTratamiento.addColumn("ID Cita");
+        tablaTratamientos.setModel(tTratamiento);
+
+        String codsql;
+
+        if (opcionBuscar == 0 && Valor == null) {
+            codsql = "SELECT * FROM tratamientos";
+        } else {
+            if (opcionBuscar == 1 && Valor != null) {
+                codsql = "SELECT * FROM tratamientos WHERE id_tratamiento = '" + Valor + "'";
+            } else {
+                if (opcionBuscar == 2 && Valor != null) {
+                    codsql = "SELECT * FROM tratamientos WHERE descripcion = '" + Valor + "'";
+                } else {
+                    if (opcionBuscar == 3 && Valor != null) {
+                        codsql = "SELECT * FROM tratamientos WHERE costo = '" + Valor + "'";
+                    } else {
+                        if (opcionBuscar == 4 && Valor != null) {
+                            codsql = "SELECT * FROM tratamientos WHERE id_cita ='" + Valor + "'";
+                        } else {
+                            codsql = "SELECT * FROM tratamientos";
+                        }
+                    }
+                }
+            }
+        }
+
+        String[] datos = new String[4];
+
+        try {
+            Statement leer = cn.createStatement();
+            ResultSet resultado = leer.executeQuery(codsql);
+
+            while (resultado.next()) {
+                datos[0] = resultado.getString(1);
+                datos[1] = resultado.getString(2);
+                datos[2] = resultado.getString(3);
+                datos[3] = resultado.getString(4);
+
+                tTratamiento.addRow(datos);
+            }
+            tablaTratamientos.setModel(tTratamiento);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e + "Error en la consulta.");
+        }
+    }
+```
+
+Update (Actualizar). Actualiza un tratamiento seleccionado en la tabla.
+
+```java
+public void ActualizarDatos() {
+        int Fila;
+        int id;
+        String Descripcion;
+        double Costo;
+        String Cita;
+
+        Fila = tablaTratamientos.getSelectedRow();
+        id = Integer.parseInt(tablaTratamientos.getValueAt(Fila, 0).toString());
+        Descripcion = tablaTratamientos.getValueAt(Fila, 1).toString();
+        Costo = Double.parseDouble(tablaTratamientos.getValueAt(Fila, 2).toString());
+        Cita = tablaTratamientos.getValueAt(Fila, 3).toString();
+
+        try {
+            PreparedStatement actualizar = cn.prepareStatement(
+                    "UPDATE tratamientos SET Descripcion = ?, Costo = ?, id_cita = ? WHERE id_tratamiento = ?"
+            );
+            actualizar.setString(1, Descripcion);
+            actualizar.setDouble(2, Costo);
+            actualizar.setString(3, Cita);
+            actualizar.setInt(4, id);
+
+            actualizar.executeUpdate();
+            mostrarTratamientos(0, null);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e + " No se logró actualizar los datos.");
+        }
+    }
+```
+
+Delete (Eliminar). Elimina el tratamiento seleccionado.
+
+```java
+public void eliminarTratamientos() {
+        int fila = tablaTratamientos.getSelectedRow();
+
+        if (fila == -1) {
+            lblError.setText("Se debe seleccionar una fila para eliminar");
+            return;
+        }
+
+        String valor = tablaTratamientos.getValueAt(fila, 0).toString();
+
+        try {
+            String sql = "DELETE FROM tratamientos WHERE id_tratamiento = ?";
+            PreparedStatement delete = cn.prepareStatement(sql);
+            delete.setInt(1, Integer.parseInt(valor));
+
+            int filasAfectadas = delete.executeUpdate();
+
+            if (filasAfectadas > 0) {
+                lblError.setText("Tratamiento eliminado exitosamente.");
+                lblError.setForeground(Color.green);
+            } else {
+                lblError.setText("No se encontró la mascota a eliminar.");
+            }
+
+            mostrarTratamientos(0, null);
+        } catch (Exception e) {
+            lblError.setText("Fallo al eliminar el tratamiento: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+```
+
+### Envio de correo electrónico.
+
+[registro_Marco_Antonio_Jimenez_Juarez.pdf](https://github.com/user-attachments/files/21467553/registro_Marco_Antonio_Jimenez_Juarez.pdf)
+
+
+
+
+
