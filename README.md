@@ -21,4 +21,8 @@ Aplicación de escritorio en Java, desarrollada con Swing y conectada a MySQL
 
 ## 
 ## FUNCIONALIDADES CLAVE
+### Integración de Captcha:
+El componente Captcha desarrollado por el equipo 2 se utiliza durante el proceso de inicio de sesión. Este se activa al seleccionar el ComboBox con la opción "No soy un robot". Es obligatorio marcar esta opción, ya que aunque se ingresen correctamente los demás datos, no será posible acceder al sistema sin completar esta verificación.
+
+<img width="1140" height="780" alt="Captura de pantalla 2025-07-28 024139" src="https://github.com/user-attachments/assets/7301cd66-f2e0-4a47-8517-b6f034901f51" />
 
