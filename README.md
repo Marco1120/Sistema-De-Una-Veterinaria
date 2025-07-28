@@ -35,6 +35,7 @@ Create (Crear). El botón registrar abre un JDialog llamada registro de usuario 
 Imagen 3.
 
 
+
 Read (Leer). En caso de ser administrador del programa se mostraran  todos los empleados o también puede mostrar por su ID, Nombre, Apellidos, Teléfono, Dirección, Correo, Contraseña, Tipo de Empleado. Para ello utilizamos un JTable, combo Box para seleccionar el tipo de busqueda y un Text Field para escribir los datos por los cuales buscaremos, de igual manera un botón para comenzar con la busqueda.
 
 ```java
@@ -185,6 +186,7 @@ public void mostrarUsuarios(int opcbuscar, String valor) {
 
 <img width="1364" height="744" alt="Captura de pantalla 2025-07-28 043102" src="https://github.com/user-attachments/assets/b1682827-3f72-4800-a5fe-2672a25dff61" />
 Imagen 4.
+
 
 Update (Actualizar). Permite editar los empleados directamente en la tabla. Actualiza todos los campos del empleado seleccionado. Como se puede ver en la imagen 4.
 ```java
@@ -481,4 +483,30 @@ public void eliminarTratamientos() {
 
 
 
+## DEPENDENCIAS Y CONFIGURACION
+### Nombre de librerias utilizadas:
 
+- Libreria.jar
+- javax.mail.jar
+- activation.jar
+- itextpdf-5.5.13.3.jar
+- mysql-connector-j-9.3.0.jar
+- Crud.jar
+- Correo.jar
+- j.Calendar
+- Ticket.jar
+
+### Pasos para instalar/ejecutar:
+
+
+
+
+
+## :hammer: Requisitos minimos:
+- `Funcionalidad 1`:  Java 11
+- `Funcionalidad 2`:  MySQL 8.0.4 
+
+## 👥 Autores
+
+| [<img src="https://avatars.githubusercontent.com/u/116097210?v=4" width=115><br><sub>Marco1120</sub>](https://github.com/Marco1120) | [<img src="https://avatars.githubusercontent.com/u/165308511?v=4" width=115><br><sub>Adrian-Valentin27</sub>](https://github.com/Adrian-Valentin27) |
+| :---: | :---: |
