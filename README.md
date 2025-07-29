@@ -493,7 +493,7 @@ public void eliminarTratamientos() {
 - mysql-connector-j-9.3.0.jar
 - Crud.jar
 - Correo.jar
-- j.Calendar
+- j.Calendar.jar
 - Ticket.jar
 - Captcha.jar
 - BarradeProgreso.jar
